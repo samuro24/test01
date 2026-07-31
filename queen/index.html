@@ -1,39 +1,46 @@
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&amp;display=swap" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky jet</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16061f">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="index.css">
+  <script defer src="script.js"></script>
+  <title>Rocket Queen</title>
 </head>
-<body class="page">
-    <div class="cv">
-        <img id="ob1" class="obloko" src="images/obl.svg">
-        <img id="ob2" class="obloko2" src="images/obl.svg">
-    </div>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="back-link" href="../" aria-label="Вернуться в меню">Menu</a>
+      <span class="local-badge"><i></i> Local mode</span>
+    </header>
 
-    <div class="winner">
-        <img class="luck" src="images/Lucky.webp">
-        <img class="win" src="images/1win_logo.png">
-    </div>
+    <section class="signal-card" aria-labelledby="app-title">
+      <div class="signal-card__glow"></div>
+      <div class="signal-stage" id="signal-stage">
+        <span class="orbit orbit--outer"></span>
+        <span class="orbit orbit--inner"></span>
+        <span class="spark spark--one"></span>
+        <span class="spark spark--two"></span>
+        <div class="signal-value" id="signal-value" aria-live="polite">--</div>
+        <div class="signal-label">коэффициент</div>
+      </div>
 
-    <div class="rocket">
-         <button class="button2" target="_blank2" onclick="location.href='../'">Back to menu</button>
-        <div class="loader2"></div>
-        <div class="visible">
-            <iframe id="myIframe" src="https://100hp.app/queen/onewin/" onload="hideElements()" scrolling="no"></iframe>
-        </div>
+      <img class="brand-logo" src="images/Lucky.webp" alt="Rocket Queen">
+      <h1 id="app-title">Signal generator</h1>
+      <p class="description">Локальный генератор случайного коэффициента</p>
 
+      <button class="generate-button" id="generate-button" type="button">
+        <span class="generate-button__label">Сгенерировать</span>
+        <span class="generate-button__flare"></span>
+      </button>
 
-        <div id="responseText" class="text"></div>
+      <div class="status" id="status" aria-live="polite">Готов к запуску</div>
+      <div class="history" id="history" aria-label="Последние результаты"></div>
+    </section>
 
-        <script src="script1.js"></script>
-    </div>
-
-    <div id="result" class="rand"></div>
+    <p class="disclaimer">Результат формируется случайно на этом устройстве и не является прогнозом.</p>
+  </main>
 </body>
-<div class="troywell-avia"></div>
-<div class="troywell-caa"></div>
 </html>
